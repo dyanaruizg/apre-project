@@ -22,13 +22,16 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
         <div class="form__group">
           <label class="label" for="month">Month</label>
           <select class="select" formControlName="month" id="month" name="month">
+            <!-- Added a placeholder to the month selector with the text "Select month" to show the user an
+            example of what they are expected to select. -->
+            <option [ngValue]="null" [disabled]="true">Select month</option>
             @for(month of months; track month) {
               <option value="{{ month.value }}">{{ month.name }}</option>
             }
           </select>
         </div>
           <div class="form__actions">
-              <button class="button button--primary" title="Click to fetch data" type="submit">Submit</button>
+            <button class="button button--primary" title="Click to fetch data" type="submit">Submit</button>
         </div>
       </form>
 
