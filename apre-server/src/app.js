@@ -22,6 +22,7 @@ const salesReportsRouter = require('./routes/reports/sales');
 const agentPerformanceReportsRouter = require('./routes/reports/agent-performance');
 const agentPerformanceBySupervisorReportRouter = require('./routes/reports/agent-performance/agent-performance-by-supervisor');
 const customerFeedbackReportsRouter = require('./routes/reports/customer-feedback');
+const customerFeedbackByRatingReportRouter = require('./routes/reports/customer-feedback/feedback-by-rating');
 
 // Variable declaration for the express app
 let app = express();
@@ -49,6 +50,7 @@ app.use('/api/reports/sales', salesReportsRouter);
 app.use('/api/reports/agent-performance', agentPerformanceReportsRouter);
 app.use('/api/reports/agent-performance', agentPerformanceBySupervisorReportRouter);
 app.use('/api/reports/customer-feedback', customerFeedbackReportsRouter);
+app.use('/api/reports/customer-feedback', customerFeedbackByRatingReportRouter);
 
 // Use the error handling middleware
 app.use(notFoundHandler);
