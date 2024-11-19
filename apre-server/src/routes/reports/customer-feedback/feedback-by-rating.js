@@ -16,7 +16,7 @@ const router = express.Router();
 /**
  * @description
  *
- * GET /agent-performance-by-supervisor
+ * GET /feedback-by-rating
  *
  * Fetches a list of distinct customer feedback ratings.
  *
@@ -88,7 +88,6 @@ router.get('/feedback-by-rating/:rating', (req, res, next) => {
           }
         }
       ]).toArray();
-      console.log("customer feedback: ", data);
       res.send(data);
     }, next);
 
